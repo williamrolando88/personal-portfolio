@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import projectsData from '../javascript/projectsData';
 import FeaturedProject from './FeaturedProject';
 import OtherProjects from './OtherProjects';
 import ProjectModal from './ProjectModal';
@@ -9,11 +10,11 @@ const Portfolio = () => {
   const [modalProject, setModalProject] = useState({});
 
   useEffect(() => {
-    const getProjects = async () => {
-      const response = await fetch('./src/assets/json/projects.json');
-      const data = await response.json();
-      setProjects(data);
-      console.log(data);
+    const getProjects = () => {
+      // const response = await fetch(projectData);
+      // const data = await response.json();
+      setProjects(projectsData);
+      console.log(projectsData);
     };
     getProjects();
     return () => {

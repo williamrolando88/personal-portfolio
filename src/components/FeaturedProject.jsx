@@ -13,6 +13,9 @@ const FeaturedProject = (props) => {
     onOpenModal,
   } = props;
 
+  console.log(thumbnail);
+  console.log(screenshot);
+
   return (
     <article className="mt-20">
       <div className="flex flex-col md:flex-row gap-6">
