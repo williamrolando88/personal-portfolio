@@ -12,20 +12,18 @@ const FeaturedProject = (props) => {
     },
     onOpenModal,
   } = props;
-  const getImageUrl = (file) => {
-    return new URL(`../../${file}`, import.meta.url).href;
-  };
+
   return (
     <article className="mt-20">
       <div className="flex flex-col md:flex-row gap-6">
         <img
           className="object-contain md:hidden"
-          src={getImageUrl(thumbnail)}
+          src={`./src/assets/${thumbnail}`}
           alt={`Snapshot for ${title}`}
         />
         <img
-          className="object-contain w-1/2 hidden md:block lg:grow"
-          src={getImageUrl(screenshot)}
+          className="object-contain w-72 hidden md:block lg:grow"
+          src={`./src/assets/${screenshot}`}
           alt={`Snapshot for ${title}`}
         />
         <div className="flex flex-col gap-3 lg:w-5/12">

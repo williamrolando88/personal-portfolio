@@ -6,15 +6,11 @@ const OtherProjects = (props) => {
     onOpenModal,
   } = props;
 
-  const getImageUrl = (file) => {
-    return new URL(`../../${file}`, import.meta.url).href;
-  };
-
   return (
     <article className="flex flex-col">
       <img
         className="h-full w-full object-contain object-top"
-        src={getImageUrl(thumbnail)}
+        src={`./src/assets/${thumbnail}`}
         alt=""
       />
       <div className="-mt-52">

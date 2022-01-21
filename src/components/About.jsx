@@ -7,7 +7,7 @@ const About = () => {
       id="about"
       className="bg-stone-900 min-h-screen w-full text-slate-50">
       <div className="mt-20">
-        <div className="px-6 md:px-[10%] bg-[url('./src/assets/bg-about-mobile.svg')] lg:bg-[url('./src/assets/bg-about-desktop.svg')] bg-no-repeat bg-right-bottom md:bg-right w-full">
+        <div className="px-6 md:px-[10%] bg-[url('./src/assets/background/bg-about-mobile.svg')] lg:bg-[url('./src/assets/background/bg-about-desktop.svg')] bg-no-repeat bg-right-bottom md:bg-right w-full">
           <div className="flex flex-col items-center gap-4 lg:w-1/2">
             <h2 className="text-5xl lg:self-start text-orange-500 font-serif mt-10">
               About me

@@ -8,16 +8,18 @@ const Portfolio = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalProject, setModalProject] = useState({});
 
-  // useEffect(() => {
-  //   const getProjects = async () => {
-  //     let response = await fetch('../json/projects.json');
-  //     setProjects(await response.json());
-  //   };
-  //   getProjects();
-  //   return () => {
-  //     setProjects([]);
-  //   };
-  // }, []);
+  useEffect(() => {
+    const getProjects = async () => {
+      const response = await fetch('./src/assets/json/projects.json');
+      const data = await response.json();
+      setProjects(data);
+      console.log(data);
+    };
+    getProjects();
+    return () => {
+      setProjects([]);
+    };
+  }, []);
 
   const handleOpenModal = (index) => {
     setModalOpen(true);

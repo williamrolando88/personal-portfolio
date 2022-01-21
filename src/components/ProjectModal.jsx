@@ -13,10 +13,6 @@ const ProjectModal = (props) => {
     onCloseModal,
   } = props;
 
-  const getImageUrl = (file) => {
-    return new URL(`../../${file}`, import.meta.url).href;
-  };
-
   return (
     // Modal background
     <div className="h-screen w-full bg-black/90 flex justify-center items-center">
@@ -41,12 +37,12 @@ const ProjectModal = (props) => {
           <div>
             <img
               className="md:hidden w-full"
-              src={getImageUrl(thumbnail)}
+              src={`./src/assets/${thumbnail}`}
               alt="Project screenshot"
             />
             <img
               className="hidden md:block w-full"
-              src={getImageUrl(screenshot)}
+              src={`./src/assets/${screenshot}`}
               alt="Project screenshot"
             />
           </div>
