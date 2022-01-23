@@ -18,12 +18,12 @@ const FeaturedProject = (props) => {
       <div className="flex flex-col md:flex-row gap-6">
         <img
           className="object-contain md:hidden"
-          src={`./src/assets/${thumbnail}`}
+          src={thumbnail}
           alt={`Snapshot for ${title}`}
         />
         <img
           className="object-contain w-72 hidden md:block lg:grow"
-          src={`./src/assets/${screenshot}`}
+          src={screenshot}
           alt={`Snapshot for ${title}`}
         />
         <div className="flex flex-col gap-3 lg:w-5/12">

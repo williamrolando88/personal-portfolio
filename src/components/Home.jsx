@@ -11,8 +11,8 @@ const Home = () => (
   <div id="home" className="h-screen w-full bg-stone-900 text-slate-50">
     <div
       className="
-    bg-[url('./src/assets/background/bg-home-mobile.svg')]
-    md:bg-[url('./src/assets/background/bg-home-desktop.svg')] bg-no-repeat h-full bg-right-bottom md:bg-right">
+    bg-[url('./src/assets/bg-home-mobile.svg')]
+    md:bg-[url('./src/assets/bg-home-desktop.svg')] bg-no-repeat h-full bg-right-bottom md:bg-right">
       <div className="flex flex-col md:flex-row md:items-center md:justify-start justify-center h-full px-6 md:p-0 gap-4">
         <div className="flex flex-col md:w-1/5 lg:w-1/2 md:order-1">
           <h1 className="text-orange-500 text-5xl font-serif">

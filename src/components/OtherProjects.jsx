@@ -10,8 +10,8 @@ const OtherProjects = (props) => {
     <article className="flex flex-col">
       <img
         className="h-full w-full object-contain object-top"
-        src={`./src/assets/${thumbnail}`}
-        alt=""
+        src={thumbnail}
+        alt={`Snapshot for ${title}`}
       />
       <div className="-mt-52">
         <div className="flex flex-col gap-3 justify-end p-4 bg-gradient-to-b from-transparent via-black to-black text-white">

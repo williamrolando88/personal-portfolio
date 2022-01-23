@@ -10,10 +10,9 @@ const Portfolio = () => {
 
   useEffect(() => {
     const getProjects = async () => {
-      const response = await fetch('./src/assets/json/projects.json');
+      const response = await fetch('./json/projects.json');
       const data = await response.json();
       setProjects(data);
-      console.log(data);
     };
     getProjects();
     return () => {
@@ -67,17 +66,14 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
-      <div
-        className={
-          modalOpen ? 'block fixed top-0 left-0 z-10 w-full' : 'hidden'
-        }>
-        {true && (
+      {modalOpen && (
+        <div className="block fixed top-0 left-0 z-10 w-full">
           <ProjectModal
             project={modalProject}
             onCloseModal={() => setModalOpen(false)}
           />
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 };
