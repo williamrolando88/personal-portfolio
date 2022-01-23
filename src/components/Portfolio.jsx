@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import projectsData from '../javascript/projectsData';
 import FeaturedProject from './FeaturedProject';
 import OtherProjects from './OtherProjects';
 import ProjectModal from './ProjectModal';
@@ -10,11 +9,10 @@ const Portfolio = () => {
   const [modalProject, setModalProject] = useState({});
 
   useEffect(() => {
-    const getProjects = () => {
-      // const response = await fetch(projectData);
-      // const data = await response.json();
-      setProjects(projectsData);
-      console.log(projectsData);
+    const getProjects = async () => {
+      const response = await fetch('./json/projects.json');
+      const data = await response.json();
+      setProjects(data);
     };
     getProjects();
     return () => {
@@ -68,17 +66,14 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
-      <div
-        className={
-          modalOpen ? 'block fixed top-0 left-0 z-10 w-full' : 'hidden'
-        }>
-        {true && (
+      {modalOpen && (
+        <div className="block fixed top-0 left-0 z-10 w-full">
           <ProjectModal
             project={modalProject}
             onCloseModal={() => setModalOpen(false)}
           />
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 };

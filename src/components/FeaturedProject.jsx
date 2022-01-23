@@ -13,22 +13,19 @@ const FeaturedProject = (props) => {
     onOpenModal,
   } = props;
 
-  console.log(thumbnail);
-  console.log(screenshot);
-
   return (
     <article className="mt-20">
       <div className="flex flex-col md:flex-row gap-6">
-        {/* <img
+        <img
           className="object-contain md:hidden"
-          src={`./src/assets/${thumbnail}`}
+          src={thumbnail}
           alt={`Snapshot for ${title}`}
         />
         <img
           className="object-contain w-72 hidden md:block lg:grow"
-          src={`./src/assets/${screenshot}`}
+          src={screenshot}
           alt={`Snapshot for ${title}`}
-        /> */}
+        />
         <div className="flex flex-col gap-3 lg:w-5/12">
           <h3 className="text-2xl font-serif lg:text-4xl">{title}</h3>
           <p className="lg:text-xl">{shortDescription}</p>
