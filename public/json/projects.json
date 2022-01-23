@@ -44,5 +44,23 @@
     "thumbnail": "./thumbnails/test2.png",
     "screenshot": "./screenshots/test1.png",
     "technologies": ["CSS", "HTML", "Bootstrap", "Ruby"]
+  },
+  {
+    "index": 5,
+    "title": "Test project 6",
+    "shortDescription": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis fugit quaerat ea maxime eligendi! Odit molestias delectus labore possimus! Culpa eveniet facilis explicabo ipsum adipisci!",
+    "longDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas quas repellendus a non numquam alias ipsam deserunt aliquam repudiandae dolorem, rerum nam aut dignissimos aperiam? Ad ipsa illum officiis perspiciatis. Impedit similique quibusdam quis corrupti hic veritatis officiis saepe ipsum sed, vitae nostrum molestiae ratione, voluptatibus maiores? Alias consequuntur nihil impedit ullam laborum cum esse autem et quo fugit architecto, ducimus commodi officia? Ab nemo nostrum repellat, ad aperiam id exercitationem dolor nesciunt, nulla, quasi libero? Ex neque voluptates tempore, nobis enim sint soluta quis sapiente quidem quo laborum aliquid odio quae consequatur iste inventore atque laudantium ullam modi voluptas.",
+    "thumbnail": "./thumbnails/test2.png",
+    "screenshot": "./screenshots/test1.png",
+    "technologies": ["CSS", "HTML", "Bootstrap", "Ruby"]
+  },
+  {
+    "index": 6,
+    "title": "Test project 7",
+    "shortDescription": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis fugit quaerat ea maxime eligendi! Odit molestias delectus labore possimus! Culpa eveniet facilis explicabo ipsum adipisci!",
+    "longDescription": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas quas repellendus a non numquam alias ipsam deserunt aliquam repudiandae dolorem, rerum nam aut dignissimos aperiam? Ad ipsa illum officiis perspiciatis. Impedit similique quibusdam quis corrupti hic veritatis officiis saepe ipsum sed, vitae nostrum molestiae ratione, voluptatibus maiores? Alias consequuntur nihil impedit ullam laborum cum esse autem et quo fugit architecto, ducimus commodi officia? Ab nemo nostrum repellat, ad aperiam id exercitationem dolor nesciunt, nulla, quasi libero? Ex neque voluptates tempore, nobis enim sint soluta quis sapiente quidem quo laborum aliquid odio quae consequatur iste inventore atque laudantium ullam modi voluptas.",
+    "thumbnail": "./thumbnails/test2.png",
+    "screenshot": "./screenshots/test1.png",
+    "technologies": ["CSS", "HTML", "Bootstrap", "Ruby"]
   }
 ]
