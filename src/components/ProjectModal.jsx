@@ -13,10 +13,6 @@ const ProjectModal = (props) => {
     onCloseModal,
   } = props;
 
-  const getImageUrl = (file) => {
-    return new URL(`../../${file}`, import.meta.url).href;
-  };
-
   return (
     // Modal background
     <div className="h-screen w-full bg-black/90 flex justify-center items-center">
@@ -37,29 +33,31 @@ const ProjectModal = (props) => {
           ))}
         </div>
         {/* Screenshot responsive rendering */}
-        <div className="mt-6 overflow-y-auto hide-scroll overscroll-none flex flex-col gap-4">
-          <div>
+        <div className="mt-6 overflow-y-auto hide-scroll overscroll-none flex flex-col gap-4 md:flex-row md:gap-6">
+          <div className="md:flex-1 grid items-center">
             <img
               className="md:hidden w-full"
-              src={getImageUrl(thumbnail)}
+              src={thumbnail}
               alt="Project screenshot"
             />
             <img
               className="hidden md:block w-full"
-              src={getImageUrl(screenshot)}
+              src={screenshot}
               alt="Project screenshot"
             />
           </div>
-          <p className="">{longDescription}</p>
-          <div className="flex justify-between text-sm">
-            <a className="btn-primary flex gap-2 items-center" href="">
-              <span>See Live</span>
-              <FaExternalLinkAlt />
-            </a>
-            <a className="btn-primary flex gap-2 items-center" href="">
-              <span>See Source</span>
-              <FaGithub />
-            </a>
+          <div className="md:flex-1">
+            <p className="">{longDescription}</p>
+            <div className="flex justify-between gap-6 md:justify-start text-sm mt-4">
+              <a className="btn-primary flex gap-2 items-center" href="">
+                <span>See Live</span>
+                <FaExternalLinkAlt />
+              </a>
+              <a className="btn-primary flex gap-2 items-center" href="">
+                <span>See Source</span>
+                <FaGithub />
+              </a>
+            </div>
           </div>
         </div>
       </div>

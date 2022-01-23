@@ -8,16 +8,17 @@ const Portfolio = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalProject, setModalProject] = useState({});
 
-  // useEffect(() => {
-  //   const getProjects = async () => {
-  //     let response = await fetch('../json/projects.json');
-  //     setProjects(await response.json());
-  //   };
-  //   getProjects();
-  //   return () => {
-  //     setProjects([]);
-  //   };
-  // }, []);
+  useEffect(() => {
+    const getProjects = async () => {
+      const response = await fetch('./json/projects.json');
+      const data = await response.json();
+      setProjects(data);
+    };
+    getProjects();
+    return () => {
+      setProjects([]);
+    };
+  }, []);
 
   const handleOpenModal = (index) => {
     setModalOpen(true);
@@ -65,17 +66,14 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
-      <div
-        className={
-          modalOpen ? 'block fixed top-0 left-0 z-10 w-full' : 'hidden'
-        }>
-        {true && (
+      {modalOpen && (
+        <div className="block fixed top-0 left-0 z-10 w-full">
           <ProjectModal
             project={modalProject}
             onCloseModal={() => setModalOpen(false)}
           />
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 };

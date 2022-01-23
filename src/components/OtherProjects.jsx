@@ -6,16 +6,12 @@ const OtherProjects = (props) => {
     onOpenModal,
   } = props;
 
-  const getImageUrl = (file) => {
-    return new URL(`../../${file}`, import.meta.url).href;
-  };
-
   return (
     <article className="flex flex-col">
       <img
         className="h-full w-full object-contain object-top"
-        src={getImageUrl(thumbnail)}
-        alt=""
+        src={thumbnail}
+        alt={`Snapshot for ${title}`}
       />
       <div className="-mt-52">
         <div className="flex flex-col gap-3 justify-end p-4 bg-gradient-to-b from-transparent via-black to-black text-white">
