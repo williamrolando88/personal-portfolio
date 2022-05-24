@@ -7,7 +7,11 @@ import Home from './components/Home';
 import NavBar from './components/NavBar';
 import Portfolio from './components/Portfolio';
 import { projects } from './modules/projects';
-import { getRepo } from './store/repos/reposHelper';
+import {
+  getRepo,
+  getRepoLanguages,
+  getRepoScreenshots,
+} from './store/repos/reposHelper';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -15,6 +19,8 @@ const App = () => {
   useEffect(() => {
     projects.forEach((project) => {
       dispatch(getRepo(project));
+      dispatch(getRepoLanguages(project));
+      dispatch(getRepoScreenshots(project));
     });
   }, []);
 

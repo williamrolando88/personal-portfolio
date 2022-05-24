@@ -1,10 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getRepo } from './reposHelper';
+import { getRepo, getRepoLanguages, getRepoScreenshots } from './reposHelper';
 
 const initialState = {
   getRepoStatus: '',
   featuredRepo: {},
   reposInfo: {},
+  reposLanguages: {},
+  reposScreenshots: {},
 };
 
 const reposSlice = createSlice({
@@ -24,6 +26,16 @@ const reposSlice = createSlice({
         state.featuredRepo = action.payload;
       } else if (!(action.meta.arg.name in state.reposInfo)) {
         state.reposInfo[action.meta.arg.name] = action.payload;
+      }
+    },
+    [getRepoLanguages.fulfilled]: (state, action) => {
+      if (!(action.meta.arg.name in state.reposLanguages)) {
+        state.reposLanguages[action.meta.arg.name] = action.payload;
+      }
+    },
+    [getRepoScreenshots.fulfilled]: (state, action) => {
+      if (!(action.meta.arg.name in state.reposScreenshots)) {
+        state.reposScreenshots[action.meta.arg.name] = action.payload;
       }
     },
   },
