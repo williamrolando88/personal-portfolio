@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { formatTitle, trimString } from '../modules/formatString';
 
 const FeaturedProject = (props) => {
+  const count = useRef(0);
+  useEffect(() => {
+    count.current = count.current + 1;
+  }, []);
+
+  console.log(count.current, props.project.name);
   const {
-    project: {
-      title,
-      shortDescription,
-      thumbnail,
-      screenshot,
-      technologies,
-      index,
-    },
+    project: { name, description, topics, index },
     onOpenModal,
   } = props;
 
@@ -17,28 +17,26 @@ const FeaturedProject = (props) => {
     <article className="mt-20">
       <div className="flex flex-col md:flex-row gap-6">
         <img
-          className="object-contain md:hidden"
-          src={thumbnail}
-          alt={`Snapshot for ${title}`}
-        />
-        <img
-          className="object-contain w-72 hidden md:block lg:grow"
-          src={screenshot}
-          alt={`Snapshot for ${title}`}
+          className="object-contain md:w-72 md:block lg:grow"
+          src={`https://raw.githubusercontent.com/williamrolando88/${name}/dev/screenshots/responsive_design.png`}
+          alt={`Snapshot for ${formatTitle(name)}`}
         />
         <div className="flex flex-col gap-3 lg:w-5/12">
-          <h3 className="text-2xl font-serif lg:text-4xl">{title}</h3>
-          <p className="lg:text-xl">{shortDescription}</p>
+          <h3 className="text-2xl font-serif lg:text-4xl">
+            {formatTitle(name)}
+          </h3>
+          <p className="lg:text-xl">{trimString(description, 100)}</p>
           <div className="flex flex-wrap gap-4">
-            {technologies.map((technology, index) => (
+            {topics.map((topic, index) => (
               <a key={index} className="px-3 py-2 border border-black">
-                {technology}
+                {topic}
               </a>
             ))}
           </div>
           <button
             className="btn-primary self-start"
-            onClick={() => onOpenModal(index)}>
+            onClick={() => onOpenModal(index)}
+          >
             See Project
           </button>
         </div>
