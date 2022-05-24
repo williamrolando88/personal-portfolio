@@ -11,9 +11,6 @@ const OtherProjects = ({ project, onOpenModal }) => {
 
   console.log(count.current, name);
 
-  // !Delete this variable and connect to modal
-  const index = 1;
-
   return (
     <article className="flex flex-col border">
       <div className="flex grow flex-col gap-2 bg-gradient-to-b from-transparent text-white to-black ">
@@ -34,7 +31,10 @@ const OtherProjects = ({ project, onOpenModal }) => {
           </div>
         </div>
       </div>
-      <button onClick={() => onOpenModal(index)} className="btn-primary w-full">
+      <button
+        onClick={() => onOpenModal(project)}
+        className="btn-primary w-full"
+      >
         See Project
       </button>
     </article>

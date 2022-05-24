@@ -11,9 +11,9 @@ const Portfolio = () => {
 
   const { featuredRepo, reposInfo } = useSelector((store) => store.repos);
 
-  const handleOpenModal = (index) => {
+  const handleOpenModal = (project) => {
     setModalOpen(true);
-    setModalProject(projects[index]);
+    setModalProject(project);
   };
 
   return (
@@ -50,14 +50,14 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
-      {/* {modalOpen && (
+      {modalOpen && (
         <div className="block fixed top-0 left-0 z-10 w-full">
           <ProjectModal
             project={modalProject}
             onCloseModal={() => setModalOpen(false)}
           />
         </div>
-      )} */}
+      )}
     </div>
   );
 };

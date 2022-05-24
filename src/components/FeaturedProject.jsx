@@ -32,7 +32,7 @@ const FeaturedProject = ({ project, onOpenModal }) => {
           </div>
           <button
             className="btn-primary self-start"
-            onClick={() => onOpenModal(index)}
+            onClick={() => onOpenModal(project)}
           >
             See Project
           </button>
