@@ -1,17 +1,14 @@
 import React, { useEffect, useRef } from 'react';
 import { formatTitle, trimString } from '../modules/formatString';
 
-const FeaturedProject = (props) => {
+const FeaturedProject = ({ project, onOpenModal }) => {
   const count = useRef(0);
   useEffect(() => {
     count.current = count.current + 1;
   }, []);
 
-  console.log(count.current, props.project.name);
-  const {
-    project: { name, description, topics, index },
-    onOpenModal,
-  } = props;
+  const { name, description, topics } = project;
+  console.log(count.current, name);
 
   return (
     <article className="mt-20">
@@ -27,8 +24,8 @@ const FeaturedProject = (props) => {
           </h3>
           <p className="lg:text-xl">{trimString(description, 100)}</p>
           <div className="flex flex-wrap gap-4">
-            {topics.map((topic, index) => (
-              <a key={index} className="px-3 py-2 border border-black">
+            {topics.map((topic) => (
+              <a key={topic} className="px-3 py-2 border border-black">
                 {topic}
               </a>
             ))}

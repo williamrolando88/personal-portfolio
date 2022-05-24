@@ -7,9 +7,12 @@ const OtherProjects = ({ project, onOpenModal }) => {
     count.current = count.current + 1;
   }, []);
 
-  const { name, description, topics, index } = project;
+  const { name, description, topics } = project;
 
   console.log(count.current, name);
+
+  // !Delete this variable and connect to modal
+  const index = 1;
 
   return (
     <article className="flex flex-col border">

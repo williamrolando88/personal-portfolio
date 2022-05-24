@@ -4,7 +4,7 @@ import { getRepo } from './reposHelper';
 const initialState = {
   getRepoStatus: '',
   featuredRepo: {},
-  reposInfo: [],
+  reposInfo: {},
 };
 
 const reposSlice = createSlice({
@@ -22,8 +22,8 @@ const reposSlice = createSlice({
       state.getRepoStatus = 'fulfilled';
       if (action.meta.arg.featured) {
         state.featuredRepo = action.payload;
-      } else {
-        state.reposInfo.push(action.payload);
+      } else if (!(action.meta.arg.name in state.reposInfo)) {
+        state.reposInfo[action.meta.arg.name] = action.payload;
       }
     },
   },
