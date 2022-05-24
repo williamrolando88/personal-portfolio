@@ -1,7 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
+import reposReducer from './repos/reposSlice';
 
-const reducer = {};
+const reducer = {
+  repos: reposReducer,
+};
 
 const store = configureStore({
   reducer,
