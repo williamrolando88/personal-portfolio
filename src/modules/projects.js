@@ -36,7 +36,7 @@ export const projects = [
     featured: false,
   },
   {
-    name: 'math-magician',
+    name: 'math-magicians',
     featured: false,
   },
   {
