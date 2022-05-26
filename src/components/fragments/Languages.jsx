@@ -11,8 +11,8 @@ const Languages = ({ languages }) => {
 
   return (
     <>
-      <h4 className="text mt-4">Languages:</h4>
-      <div className="flex text-sm md:justify-between flex-wrap gap-2 mt-2">
+      <h4 className="text mt-2">Languages:</h4>
+      <div className="flex text-sm md:justify-between flex-wrap gap-2">
         {languagesKeys.map((language, index) => (
           <div
             key={language}

@@ -11,8 +11,17 @@ const ProjectModal = ({ project, onCloseModal }) => {
   const projectLanguages = useSelector(
     (store) => store.repos.reposLanguages[name]
   );
-  console.log(projectLanguages);
-  // todo: get pictures url
+
+  const projectScreenshots = useSelector(
+    (store) => store.repos.reposScreenshots[name]
+  );
+
+  if (Array.isArray(projectScreenshots)) {
+    const projectPicturesUrl = projectScreenshots.map(
+      (project) => project.download_url
+    );
+    console.log(projectPicturesUrl);
+  }
 
   return (
     // Modal background
@@ -27,14 +36,15 @@ const ProjectModal = ({ project, onCloseModal }) => {
         </button>
         <div className="flex justify-between">
           <h3 className="font-bold text-2xl grow">{formatTitle(name)}</h3>
-          <div className="border-2 border-neutral-500 p-2 rounded-md mr-2 flex gap-2 items-center">
-            <FaStar className="text-yellow-400" />
+          <div className="border-2 border-neutral-500 p-2 rounded-md mr-8 flex gap-2 items-center">
+            <span>GitHub Stars:</span>
             <span>{stargazers_count}</span>
+            <FaStar className="text-yellow-400" />
           </div>
         </div>
         {/* Technologies objects */}
-        <h4 className="mt-4">Technologies:</h4>
-        <div className="mt-2 flex flex-wrap gap-4 text-sm">
+        <h4 className="mt-2">Technologies:</h4>
+        <div className="flex flex-wrap gap-4 text-sm">
           {topics.map((topic) => (
             <a key={topic} className="px-3 py-2 border border-black">
               {topic}
@@ -45,16 +55,7 @@ const ProjectModal = ({ project, onCloseModal }) => {
         {/* Screenshot responsive rendering */}
         <div className="mt-6 overflow-y-auto hide-scroll overscroll-none flex flex-col gap-4 md:flex-row md:gap-6">
           <div className="md:flex-1 grid items-center">
-            <img
-              className="md:hidden w-full"
-              src={''}
-              alt="Project screenshot"
-            />
-            <img
-              className="hidden md:block w-full"
-              src={''}
-              alt="Project screenshot"
-            />
+            <div className="w-full h-full bg-red-500">pictures</div>
           </div>
           <div className="md:flex-1">
             <p className="">{description}</p>
