@@ -1,7 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-const token = 'Bearer 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';
-
 export const getRepo = createAsyncThunk(
   'repo/get',
 
@@ -9,7 +7,7 @@ export const getRepo = createAsyncThunk(
     const url = `https://api.github.com/repos/williamrolando88/${name}`;
     const response = await fetch(url, {
       headers: {
-        Authorization: token,
+        Authorization: import.meta.env.VITE_GITHUB_TOKEN,
       },
     });
     return response.json();
@@ -22,7 +20,7 @@ export const getRepoLanguages = createAsyncThunk(
     const url = `https://api.github.com/repos/williamrolando88/${name}/languages`;
     const response = await fetch(url, {
       headers: {
-        Authorization: token,
+        Authorization: import.meta.env.VITE_GITHUB_TOKEN,
       },
     });
     return response.json();
