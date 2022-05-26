@@ -7,9 +7,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.1",
+    "eslint-plugin-tailwindcss": "^3.5.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-icons": "^4.3.1"
+    "react-icons": "^4.3.1",
+    "react-redux": "^8.0.2",
+    "redux-logger": "^3.0.6"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^1.0.7",

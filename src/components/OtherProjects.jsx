@@ -1,36 +1,40 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { formatTitle, trimString } from '../modules/formatString';
 
-const OtherProjects = (props) => {
-  const {
-    project: { title, thumbnail, shortDescription, technologies, index },
-    onOpenModal,
-  } = props;
+const OtherProjects = ({ project, onOpenModal }) => {
+  const count = useRef(0);
+  useEffect(() => {
+    count.current = count.current + 1;
+  }, []);
+
+  const { name, description, topics } = project;
 
   return (
-    <article className="flex flex-col">
-      <img
-        className="h-full w-full object-contain object-top"
-        src={thumbnail}
-        alt={`Snapshot for ${title}`}
-      />
-      <div className="-mt-52">
-        <div className="flex flex-col gap-3 justify-end p-4 bg-gradient-to-b from-transparent via-black to-black text-white">
-          <h3 className="text-2xl font-serif">{title}</h3>
-          <p>{shortDescription}</p>
-          <div className="flex flex-wrap gap-4">
-            {technologies.map((technology, index) => (
-              <a key={index} className="px-3 py-2 bg-white/30">
-                {technology}
-              </a>
+    <article className="flex flex-col border">
+      <div className="flex grow flex-col gap-2 bg-gradient-to-b from-transparent text-white to-black ">
+        <img
+          className="h-full w-full object-contain object-top"
+          src={`https://raw.githubusercontent.com/williamrolando88/${name}/dev/screenshots/responsive_design.png`}
+          alt={`Snapshot for ${formatTitle(name)}`}
+        />
+        <div className="flex gap-2 flex-col px-4 py-2">
+          <h3 className="text-2xl font-serif">{formatTitle(name)}</h3>
+          <p>{trimString(description, 80)}</p>
+          <div className="flex flex-wrap gap-2">
+            {topics.map((topic) => (
+              <span key={topic} className="px-2 py-1 text-sm bg-white/30">
+                {topic}
+              </span>
             ))}
           </div>
         </div>
-        <button
-          onClick={() => onOpenModal(index)}
-          className="btn-primary w-full">
-          See Project
-        </button>
       </div>
+      <button
+        onClick={() => onOpenModal(project)}
+        className="btn-primary w-full"
+      >
+        See Project
+      </button>
     </article>
   );
 };
