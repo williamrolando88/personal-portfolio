@@ -1,21 +1,18 @@
 import React from 'react';
 import { FaExternalLinkAlt, FaGithub, FaTimes, FaStar } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
 import { formatTitle } from '../modules/formatString';
+import Languages from './fragments/Languages';
 
 const ProjectModal = ({ project, onCloseModal }) => {
-  console.log(project);
   const { name, topics, description, homepage, html_url, stargazers_count } =
     project;
 
+  const projectLanguages = useSelector(
+    (store) => store.repos.reposLanguages[name]
+  );
+  console.log(projectLanguages);
   // todo: get pictures url
-
-  /* 
-  https://api.github.com/repos/williamrolando88/Hotelzilla-UI
-  languages_url: /languages -> todo
-  contents_url: /contents/screenshots -> download_url
-
-
-  */
 
   return (
     // Modal background
@@ -43,6 +40,7 @@ const ProjectModal = ({ project, onCloseModal }) => {
             </a>
           ))}
         </div>
+        <Languages languages={projectLanguages} />
         {/* Screenshot responsive rendering */}
         <div className="mt-6 overflow-y-auto hide-scroll overscroll-none flex flex-col gap-4 md:flex-row md:gap-6">
           <div className="md:flex-1 grid items-center">

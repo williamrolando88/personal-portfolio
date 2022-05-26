@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import FeaturedProject from './FeaturedProject';
 import OtherProjects from './OtherProjects';
 import ProjectModal from './ProjectModal';
 
 const Portfolio = () => {
-  const [projects, setProjects] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
   const [modalProject, setModalProject] = useState({});
 
