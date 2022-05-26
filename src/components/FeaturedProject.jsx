@@ -8,7 +8,6 @@ const FeaturedProject = ({ project, onOpenModal }) => {
   }, []);
 
   const { name, description, topics } = project;
-  console.log(count.current, name);
 
   return (
     <article className="mt-20">

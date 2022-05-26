@@ -9,8 +9,6 @@ const OtherProjects = ({ project, onOpenModal }) => {
 
   const { name, description, topics } = project;
 
-  console.log(count.current, name);
-
   return (
     <article className="flex flex-col border">
       <div className="flex grow flex-col gap-2 bg-gradient-to-b from-transparent text-white to-black ">
