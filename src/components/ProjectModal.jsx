@@ -12,17 +12,6 @@ const ProjectModal = ({ project, onCloseModal }) => {
     (store) => store.repos.reposLanguages[name]
   );
 
-  const projectScreenshots = useSelector(
-    (store) => store.repos.reposScreenshots[name]
-  );
-
-  if (Array.isArray(projectScreenshots)) {
-    const projectPicturesUrl = projectScreenshots.map(
-      (project) => project.download_url
-    );
-    console.log(projectPicturesUrl);
-  }
-
   return (
     // Modal background
     <div className="h-screen w-full bg-black/90 flex justify-center items-center">
@@ -55,7 +44,12 @@ const ProjectModal = ({ project, onCloseModal }) => {
         {/* Screenshot responsive rendering */}
         <div className="mt-6 overflow-y-auto hide-scroll overscroll-none flex flex-col gap-4 md:flex-row md:gap-6">
           <div className="md:flex-1 grid items-center">
-            <div className="w-full h-full bg-red-500">pictures</div>
+            {/* Here comes the picture from the work card */}
+            <img
+              className="object-contain"
+              src={`https://raw.githubusercontent.com/williamrolando88/${name}/dev/screenshots/responsive_design.png`}
+              alt={`Snapshot for ${formatTitle(name)}`}
+            />
           </div>
           <div className="md:flex-1">
             <p className="">{description}</p>

@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getRepo, getRepoLanguages, getRepoScreenshots } from './reposHelper';
+import { getRepo, getRepoLanguages } from './reposHelper';
 
 const initialState = {
   getRepoStatus: '',
@@ -31,11 +31,6 @@ const reposSlice = createSlice({
     [getRepoLanguages.fulfilled]: (state, action) => {
       if (!(action.meta.arg.name in state.reposLanguages)) {
         state.reposLanguages[action.meta.arg.name] = action.payload;
-      }
-    },
-    [getRepoScreenshots.fulfilled]: (state, action) => {
-      if (!(action.meta.arg.name in state.reposScreenshots)) {
-        state.reposScreenshots[action.meta.arg.name] = action.payload;
       }
     },
   },

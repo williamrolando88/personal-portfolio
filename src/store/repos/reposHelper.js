@@ -28,16 +28,3 @@ export const getRepoLanguages = createAsyncThunk(
     return response.json();
   }
 );
-
-export const getRepoScreenshots = createAsyncThunk(
-  'repoScreenshots/get',
-  async ({ name }) => {
-    const url = `https://api.github.com/repos/williamrolando88/${name}/contents/screenshots`;
-    const response = await fetch(url, {
-      headers: {
-        Authorization: token,
-      },
-    });
-    return response.json();
-  }
-);
