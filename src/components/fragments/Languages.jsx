@@ -15,12 +15,12 @@ const Languages = ({ languages }) => {
   });
   return (
     <>
-      <h4 className="text-lg mt-4">Languages:</h4>
-      <div className="flex md:justify-between flex-wrap gap-2 mt-2">
+      <h4 className="text mt-4">Languages:</h4>
+      <div className="flex text-sm md:justify-between flex-wrap gap-2 mt-2">
         {languagesKeys.map((language, index) => (
           <div
             key={language}
-            className="border md:border-2 rounded-md md:px-4 md:py-2 flex gap-2 items-center px-1 "
+            className="border bg-orange-200 border-orange-800 md:border-2 rounded-md md:px-4 md:py-2 flex gap-2 items-center px-1 "
           >
             <span>{language}:</span>
             <span>{languagesPercentage[index]}%</span>

@@ -33,7 +33,8 @@ const ProjectModal = ({ project, onCloseModal }) => {
           </div>
         </div>
         {/* Technologies objects */}
-        <div className="mt-6 flex flex-wrap gap-4">
+        <h4 className="mt-4">Technologies:</h4>
+        <div className="mt-2 flex flex-wrap gap-4 text-sm">
           {topics.map((topic) => (
             <a key={topic} className="px-3 py-2 border border-black">
               {topic}
