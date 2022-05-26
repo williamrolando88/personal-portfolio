@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-const token = 'Bearer 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';
+const token = 'Bearer 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';
 
 export const getRepo = createAsyncThunk(
   'repo/get',
