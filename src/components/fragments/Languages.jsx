@@ -9,10 +9,6 @@ const Languages = ({ languages }) => {
     parseFloat(((100 * language) / languagesTotal).toFixed(2))
   );
 
-  languagesKeys.map((language, index) => {
-    console.log(language, languagesValues[index]);
-    console.log(language, languagesPercentage[index]);
-  });
   return (
     <>
       <h4 className="text mt-4">Languages:</h4>
