@@ -56,7 +56,7 @@ You can work in your favorite Code Editor
 
 <!-- There is no Live Demo available at the moment -->
 
-If you want to see a live demo of this project, [click here](https://loving-wescoff-fd28de.netlify.app/)
+If you want to see a live demo of this project, [click here](https://wr88-personal-portfolio.netlify.app/)
 
 ## Authors
 
