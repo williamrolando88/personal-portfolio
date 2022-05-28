@@ -28,19 +28,7 @@ export const projects = [
     featured: false,
   },
   {
-    name: 'bookstore',
-    featured: false,
-  },
-  {
-    name: 'leaderboard',
-    featured: false,
-  },
-  {
     name: 'math-magicians',
-    featured: false,
-  },
-  {
-    name: 'My-catalog',
     featured: false,
   },
   {
