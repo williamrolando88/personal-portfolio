@@ -5,7 +5,8 @@ const About = () => {
   return (
     <section
       id="about"
-      className="bg-stone-900 min-h-screen w-full text-slate-50">
+      className="bg-stone-900 min-h-screen w-full text-slate-50"
+    >
       <div className="mt-20">
         <div className="px-6 md:px-[10%] bg-[url('./src/assets/bg-about-mobile.svg')] lg:bg-[url('./src/assets/bg-about-desktop.svg')] bg-no-repeat bg-right-bottom md:bg-right w-full">
           <div className="flex flex-col items-center gap-4 lg:w-1/2">
@@ -32,7 +33,13 @@ const About = () => {
             </p>
           </div>
           <div className="h-56 self-start mt-6">
-            <button className="btn-primary">Get My Resume</button>
+            <a
+              href="https://drive.google.com/file/d/15RfrN2ofKYXSgs26ZVmkP_o_0LHltbKG/view?usp=sharing"
+              className="btn-primary"
+              target="_blank"
+            >
+              Get My Resume
+            </a>
           </div>
         </div>
 
@@ -67,7 +74,6 @@ const About = () => {
               <li>Bootstrap</li>
               <li>TailwindCSS</li>
               <li>React.js</li>
-              <li>Vue.js</li>
               <li>Redux</li>
               <li>Ruby on Rails</li>
             </ul>
